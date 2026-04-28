@@ -1,0 +1,23 @@
+{
+  "name": "wsl-smb-mount",
+  "version": "1.0.0",
+  "description": "Hermes Agent WSL SMB共享文件夹挂载配置",
+  "parameters": {
+    "SMB_SERVER_IP": "192.168.1.3",
+    "SMB_SHARE_NAME": "agent-video-shared",
+    "SMB_MOUNT_POINT": "/mnt/video-shared",
+    "SMB_USERNAME": "86150",
+    "SMB_VERSION": "3.0"
+  },
+  "scripts": {
+    "mount": "python3 mount_smb.py",
+    "check": "python3 mount_smb.py --check",
+    "unmount": "python3 mount_smb.py --unmount",
+    "test": "python3 mount_smb.py --test"
+  },
+  "prerequisites": [
+    "电脑B已创建共享文件夹并设置Everyone读写权限",
+    "WSL已安装 smbclient cifs-utils",
+    "电脑B与WSL在同一局域网"
+  ]
+}
